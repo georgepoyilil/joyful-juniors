@@ -1,1 +1,25 @@
 /* Add application styles & imports to this file! */
+/* violet 9774c3 */
+/* yellow fac919 */
+:root {
+    --primary-color: #9774c3; /* Set your primary color here */
+
+    --primary-color-dark: #8162a7; /* Set your primary color here */
+    --secondary-color: #fac919; /* Set your secondary color here */
+    --secondary-color-light: #fae28a; /* Set your secondary color here */
+
+}
+
+app-root {
+    display: block;
+    width: 100%;
+    height: 10vh;
+}
+
+/* router-outlet {
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

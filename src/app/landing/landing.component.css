@@ -1,0 +1,33 @@
+/* header.component.scss */
+mat-toolbar {
+    position: relative;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+
+
+  .mat-toolbar {
+    background-color: var(--primary-color);
+  }
+  
+  .menu-button{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding:1rem;
+    border:none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-button:hover {
+    background-color: var(--primary-color-dark); /* Darker background color on hover */
+    color: var(--secondary-color-light); /* Darker text color on hover */
+  }
+
+  .top-bar{
+    height:1rem;
+    background-color: var(--secondary-color);
+    width: 100%;
+  }
