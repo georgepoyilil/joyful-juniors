@@ -1,0 +1,69 @@
+.sticky-icons {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    z-index: 1000;
+  }
+  
+  .icon-wrapper {
+    position: relative;
+    width: 50px; /* Initial width */
+    height: 50px;
+    background-color: #fff;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    transition: width 0.3s ease, background-color 0.3s ease;
+    overflow: hidden; /* Hide the label initially */
+    padding-left: 10px; /* Space for the icon */
+  }
+  
+  .icon-wrapper img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon-label {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .icon-wrapper:hover {
+    width: 150px; /* Expand on hover */
+  }
+  
+  .icon-wrapper:hover .icon-label {
+    opacity: 1; /* Show label on hover */
+  }
+  
+  /* Specific colors or custom styling for each icon */
+  .whatsapp {
+    background-color: #25D366;
+    color: white;
+  }
+  
+  .facebook {
+    background-color: #3b5998;
+    color: white;
+  }
+  
+  .instagram {
+    background-color: #E4405F;
+    color: white;
+  }
+  
+  .whatsapp:hover,
+  .facebook:hover,
+  .instagram:hover {
+    background-color: darken(#25D366, 10%); /* Darken on hover */
+  }
+  

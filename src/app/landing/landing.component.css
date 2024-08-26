@@ -1,6 +1,7 @@
 /* header.component.scss */
 mat-toolbar {
     position: relative;
+    height: 8.1rem;
   }
   
   .spacer {
@@ -10,13 +11,14 @@ mat-toolbar {
 
 
   .mat-toolbar {
-    background-color: var(--primary-color);
+    background-color: white;
+    border-bottom: solid 1px rgb(232, 232, 232);
   }
   
   .menu-button{
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    padding:1rem;
+    /* background-color: var(--primary-color); */
+    color: black;
+    padding:1.5rem;
     border:none;
     transition: background-color 0.3s, color 0.3s;
   }
@@ -27,7 +29,12 @@ mat-toolbar {
   }
 
   .top-bar{
-    height:1rem;
-    background-color: var(--secondary-color);
+    height:.5rem;
+    /* background-color: var(--secondary-color); */
     width: 100%;
+  }
+
+  .logo{
+    height:8rem;
+    
   }
