@@ -4,7 +4,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { BackgroundComponent } from '../background/background.component';
-import { CarouselComponent } from './carousel/carousel.component';
 
 
 
@@ -19,7 +18,6 @@ import { CarouselComponent } from './carousel/carousel.component';
     MatButtonModule,
     SocialMediaComponent,
     BackgroundComponent,
-    CarouselComponent
   ]
 })
 export class LandingComponent implements OnInit {
@@ -48,8 +46,6 @@ export class LandingComponent implements OnInit {
     if (this.screenWidth < 500) {
       this.screenBreak = true;
     }
-
-
 
   }
 
