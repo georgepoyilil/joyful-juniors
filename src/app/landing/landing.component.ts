@@ -4,6 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { BackgroundComponent } from '../background/background.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 
@@ -17,7 +18,8 @@ import { BackgroundComponent } from '../background/background.component';
     MatMenuModule,
     MatButtonModule,
     SocialMediaComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    CarouselComponent
   ]
 })
 export class LandingComponent implements OnInit {

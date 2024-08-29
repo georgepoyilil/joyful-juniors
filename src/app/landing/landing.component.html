@@ -1,16 +1,23 @@
 <!-- header.component.html -->
-<div class="top-bar"></div>
-<mat-toolbar>
-    <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo">
-    <span class="spacer"></span>
-    <button class="menu-button" routerLink="/">Home</button>
-    <button class="menu-button" routerLink="/about">About Us</button>
-    <button class="menu-button" routerLink="/facilities">Facilities</button>
-    <button class="menu-button" routerLink="/affiliations">Affliations</button>
-    <button class="menu-button" routerLink="/blogs">Blogs</button>
-    <button class="menu-button" routerLink="/gallery">Gallery</button>
-    <button class="menu-button" routerLink="/faqs">FAQs</button>
-    <button class="menu-button" routerLink="/contact">Contact Us</button>
-</mat-toolbar>
-<app-social-media></app-social-media>
+<div class="container-fluid top-bar">
+    <p style="padding-left: 5rem;font-weight: bold;">Raslok Hospital Road
+        Thavakkara,Kannur</p>
+</div>
+<div class="container">
+    <mat-toolbar>
+        <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo">
+        <span class="spacer"></span>
+        <button class="menu-button" routerLink="/">Home</button>
+        <button class="menu-button" routerLink="/about">About Us</button>
+        <button class="menu-button" routerLink="/facilities">Facilities</button>
+        <button class="menu-button" routerLink="/affiliations">Affliations</button>
+        <button class="menu-button" routerLink="/blogs">Blogs</button>
+        <button class="menu-button" routerLink="/gallery">Gallery</button>
+        <button class="menu-button" routerLink="/faqs">FAQs</button>
+        <button class="menu-button" routerLink="/contact">Contact Us</button>
+    </mat-toolbar>
+</div>
+
+<!-- <app-social-media></app-social-media> -->
 <app-background></app-background>
+<app-carousel></app-carousel>
