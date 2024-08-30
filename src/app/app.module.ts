@@ -17,6 +17,6 @@ import { LandingModule } from './landing/landing.module';
     AppRoutingModule,
     LandingModule,
   ],
-  bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]
 })
 export class AppModule { }

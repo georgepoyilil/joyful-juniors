@@ -52,6 +52,7 @@ app-background {
 
 .shadower{
   margin-top: 1rem;
+  background-color: white;
 }
 
 .container.shadower {
