@@ -24,6 +24,34 @@
   border-radius: 0.5em;
 }
 
+.slide-container {
+    position: relative; /* Make the container position relative */
+    display: inline-block; /* Align elements inline */
+  }
+  
+  .text-overlay {
+    position: absolute; /* Position the text absolutely within the container */
+    top: 10%; /* Adjust the position from the top */
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Center the text horizontally */
+    color: white; /* Change text color to be visible on the image */
+    text-align: center; /* Center the text */
+    z-index: 1; /* Ensure the text is above the image */
+    background-color: rgba(0, 0, 0, 0.2); /* Optional: Add a semi-transparent background for readability */
+    padding: 10px; /* Optional: Add some padding around the text */
+    width: 80%; /* Adjust width if needed */
+    border-radius: 5px; /* Optional: Round the corners */
+  }
+  
+  .slide {
+    display: block;
+    max-width: 100%; /* Ensure the image fits the container */
+    height: auto;
+    position: relative; /* Maintain the image's position */
+    z-index: 0; /* Ensure the image is below the text */
+  }
+  
+
 .slide:hover {
   transform: scale(1.025);
 }
@@ -58,9 +86,11 @@
   /* Position the buttons */
   &.next {
     right: 0;
+    top:0;
   }
   &.prev {
     left: 0;
+    top:0;
   }
 }
 

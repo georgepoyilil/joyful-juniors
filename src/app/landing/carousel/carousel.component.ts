@@ -23,18 +23,18 @@ import { CommonModule } from "@angular/common";
     trigger("slideAnimation", [
       /* scale */
       transition("void => scale", [
-        useAnimation(scaleIn, { params: { time: "500ms" } })
+        useAnimation(scaleIn, { params: { time: "1500ms" } })
       ]),
       transition("scale => void", [
-        useAnimation(scaleOut, { params: { time: "500ms" } })
+        useAnimation(scaleOut, { params: { time: "1500ms" } })
       ]),
 
       /* fade */
       transition("void => fade", [
-        useAnimation(fadeIn, { params: { time: "500ms" } })
+        useAnimation(fadeIn, { params: { time: "1500ms" } })
       ]),
       transition("fade => void", [
-        useAnimation(fadeOut, { params: { time: "500ms" } })
+        useAnimation(fadeOut, { params: { time: "1500ms" } })
       ]),
 
       /* flip */
@@ -82,6 +82,26 @@ export class CarouselComponent implements OnInit {
     this.preloadImages(); // for the demo
     console.log(this.slides);
     this.slides = this.slideList;
+    this.startAutoSlide();
+  }
+  ngOnDestroy(): void {
+    this.stopAutoSlide();
+  }
+
+  intervalId: any; // Store interval ID to clear it later
+  startAutoSlide(): void {
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+    }, 4000); // Change slide every 2 seconds
+  }
+
+  stopAutoSlide(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+  nextSlide(): void {
+    this.currentSlide = (this.currentSlide + 1) % this.slides.length; // Loop back to the first slide after the last one
   }
 
   preloadImages() {

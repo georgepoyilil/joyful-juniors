@@ -1,21 +1,20 @@
-
 <!-- carousel -->
 <div class="carousel">
     <ng-container *ngFor="let slide of slides; let i = index">
-      <img
-        *ngIf="i === currentSlide"
-        [src]="slide.src"
-        class="slide"
-        [@slideAnimation]="animationType"
-      />
+        <div *ngIf="i === currentSlide" class="slide-container">
+            <div class="text-overlay">
+                <h3 *ngIf="slide.headline">{{ slide.headline }}</h3> <!-- Display the headline if present -->
+                <p>{{ slide.text }}</p> <!-- Display the text -->
+            </div>
+            <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" [@slideAnimation]="animationType" />
+        </div>
     </ng-container>
-  
+
     <!-- controls -->
     <button class="control prev" (click)="onPreviousClick()">
-      <span class="arrow left"></span>
+        <span class="arrow left"></span>
     </button>
     <button class="control next" (click)="onNextClick()">
-      <span class="arrow right"></span>
+        <span class="arrow right"></span>
     </button>
-  </div>
-  
+</div>
