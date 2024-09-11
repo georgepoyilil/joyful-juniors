@@ -7,7 +7,9 @@ import { BackgroundComponent } from '../background/background.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { Slide } from "./carousel/carousel.interface";
 import { AnimationType } from "./carousel/carousel.animations";
-
+import { Subscription } from 'rxjs';
+import { BreakpointObserver, Breakpoints,  } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -21,7 +23,8 @@ import { AnimationType } from "./carousel/carousel.animations";
     MatButtonModule,
     SocialMediaComponent,
     BackgroundComponent,
-    CarouselComponent
+    CarouselComponent,
+    CommonModule
   ]
 })
 export class LandingComponent implements OnInit {
@@ -38,8 +41,21 @@ export class LandingComponent implements OnInit {
   @ViewChild(CarouselComponent, { static: true })
   carousel!: CarouselComponent;
 
-  constructor() {
+  private breakpointSubscription: Subscription;
+  showMobileMenu: boolean = false;
+  constructor(private breakpointObserver: BreakpointObserver) {
 
+    this.breakpointSubscription = this.breakpointObserver
+    .observe([Breakpoints.Small, Breakpoints.XSmall])
+    .subscribe((state) => {
+      console.log(state)
+      this.isMobile = state.matches;
+      if(this.isMobile){
+
+      }
+      console.log(this.isMobile)
+
+    });
 
 
   }
@@ -108,5 +124,9 @@ export class LandingComponent implements OnInit {
     setTimeout(() => {
       this.carousel.onNextClick();
     });
+  }
+
+  toggleMenu(){
+    this.showMobileMenu = !this.showMobileMenu
   }
 }

@@ -43,6 +43,9 @@ mat-toolbar {
   height: 8rem;
 
 }
+.logo-mobile{
+  width: 100%;
+}
 
 app-background {
   position: fixed;
@@ -60,3 +63,47 @@ app-background {
   border-radius: 5px; /* Optional: Add some rounded corners */
 }
 
+.menu-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw;
+  background-color: #f8f9fa; /* You can change the background color as needed */
+  padding: 10px;
+  z-index: 999;
+}
+
+.menu-button1 {
+  width: 50%; /* Full width */
+  padding: 1rem 2rem;
+  margin: 10px 0;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button1:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.close-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  font-size: 6rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+
+}
+
+.close-button:hover {
+  color: #007bff; /* Change color on hover */
+}

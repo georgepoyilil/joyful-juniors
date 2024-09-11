@@ -3,27 +3,52 @@
     <p style="padding-left: 5rem;font-weight: bold;">Raslok Hospital Road
         Thavakkara,Kannur</p>
 </div>
-<div class="container shadower">
+<div class="container shadower" *ngIf="false">
     <mat-toolbar>
         <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo">
         <span class="spacer"></span>
-        <button class="menu-button" routerLink="/">Home</button>
-        <button class="menu-button" routerLink="/about">About Us</button>
-        <button class="menu-button" routerLink="/facilities">Facilities</button>
-        <!-- <button class="menu-button" routerLink="/affiliations">Affliations</button> -->
-        <button class="menu-button" routerLink="/blogs">Blogs</button>
-        <button class="menu-button" routerLink="/gallery">Gallery</button>
-        <button class="menu-button" routerLink="/faqs">FAQs</button>
-        <button class="menu-button" routerLink="/contact">Contact Us</button>
+        <div class="menu-container">
+            <button class="menu-button" routerLink="/landing">Home</button>
+            <button class="menu-button" routerLink="/about">About Us</button>
+            <button class="menu-button" routerLink="/facilities">Facilities</button>
+            <!-- <button class="menu-button" routerLink="/affiliations">Affliations</button> -->
+            <button class="menu-button" routerLink="/blogs">Blogs</button>
+            <button class="menu-button" routerLink="/gallery">Gallery</button>
+            <button class="menu-button" routerLink="/faqs">FAQs</button>
+            <button class="menu-button" routerLink="/contact">Contact Us</button>
+        </div>
     </mat-toolbar>
+</div>
+
+<div class="container-fluid shadower">
+    <div style="text-align: center;">
+        <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo-mobile">
+    </div>
+
+    <div (click)="toggleMenu()">
+        <img src="../../assets/menu-button.png" style="height: 4rem;margin-left: 2rem;">
+    </div>
+
+    <div style="text-align: center; vertical-align: middle;" *ngIf="showMobileMenu">
+
+        <mat-toolbar>
+            <div class="menu-container1">
+                <button class="close-button" (click)="toggleMenu()">×</button>
+                <button class="menu-button1" routerLink="/landing">Home</button>
+                <button class="menu-button1" routerLink="/about">About Us</button>
+                <button class="menu-button1" routerLink="/facilities">Facilities</button>
+                <!-- <button class="menu-button1" routerLink="/affiliations">Affliations</button> -->
+                <button class="menu-button1" routerLink="/blogs">Blogs</button>
+                <button class="menu-button1" routerLink="/gallery">Gallery</button>
+                <button class="menu-button1" routerLink="/faqs">FAQs</button>
+                <button class="menu-button1" routerLink="/contact">Contact Us</button>
+            </div>
+        </mat-toolbar>
+    </div>
 </div>
 
 <app-social-media></app-social-media>
 <!-- <app-background></app-background> -->
-<div class="container" style="height: 75vh;padding-top: 2rem;">
-
+<div class="container-fluid" style="max-height: 75vh;padding-top: 2rem;">
     <carousel [slideList]="slides" [animationType]="animationType"></carousel>
-
 </div>
-
-

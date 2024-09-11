@@ -60,7 +60,7 @@ import { CommonModule } from "@angular/common";
 export class CarouselComponent implements OnInit {
   @Input() slideList:any;
   slides: Slide[] = [];
-  @Input() animationType = AnimationType.Scale;
+  @Input() animationType = AnimationType.Flip;
 
   currentSlide = 0;
 
@@ -92,7 +92,7 @@ export class CarouselComponent implements OnInit {
   startAutoSlide(): void {
     this.intervalId = setInterval(() => {
       this.nextSlide();
-    }, 4000); // Change slide every 2 seconds
+    }, 6000); // Change slide every x seconds
   }
 
   stopAutoSlide(): void {
