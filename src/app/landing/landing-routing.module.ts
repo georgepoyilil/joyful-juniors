@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   {
-    path: '', component: LandingComponent
-  }
+    path: '', component: LandingComponent, children: [
+      {
+        path: 'about', component:AboutUsComponent
+      }
+    ]
+  },
+
 ];
 
 @NgModule({

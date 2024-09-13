@@ -31,7 +31,7 @@
   
   .text-overlay {
     position: absolute; /* Position the text absolutely within the container */
-    top: 10%; /* Adjust the position from the top */
+    top: 70%; /* Adjust the position from the top */
     left: 50%; /* Center the text horizontally */
     transform: translateX(-50%); /* Center the text horizontally */
     color: white; /* Change text color to be visible on the image */
@@ -41,6 +41,7 @@
     padding: 10px; /* Optional: Add some padding around the text */
     width: 80%; /* Adjust width if needed */
     border-radius: 5px; /* Optional: Round the corners */
+    height: 4rem;
   }
   
   .slide {

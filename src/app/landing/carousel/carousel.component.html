@@ -3,8 +3,8 @@
     <ng-container *ngFor="let slide of slides; let i = index">
         <div *ngIf="i === currentSlide" class="slide-container">
             <div class="text-overlay">
-                <h3 *ngIf="slide.headline">{{ slide.headline }}</h3> <!-- Display the headline if present -->
-                <p>{{ slide.text }}</p> <!-- Display the text -->
+                <p *ngIf="slide.headline" class="slide" [@slideAnimation]="animationType">{{ slide.headline }}</p> <!-- Display the headline if present -->
+                <p style="height: 12px;">{{ slide.text }}</p> <!-- Display the text -->
             </div>
             <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" [@slideAnimation]="animationType" />
         </div>

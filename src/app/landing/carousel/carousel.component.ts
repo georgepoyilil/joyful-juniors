@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Slide } from "./carousel.interface";
-import { trigger, transition, useAnimation } from "@angular/animations";
+import { trigger, transition, useAnimation, style, animate } from "@angular/animations";
 
 import {
   AnimationType,
@@ -19,48 +19,97 @@ import { CommonModule } from "@angular/common";
   selector: "carousel",
   templateUrl: "./carousel.component.html",
   styleUrls: ["./carousel.component.scss"],
+  // animations: [
+  //   trigger("slideAnimation", [
+  //     /* scale */
+  //     transition("void => scale", [
+  //       useAnimation(scaleIn, { params: { time: "1500ms" } })
+  //     ]),
+  //     transition("scale => void", [
+  //       useAnimation(scaleOut, { params: { time: "1500ms" } })
+  //     ]),
+
+  //     /* fade */
+  //     transition("void => fade", [
+  //       useAnimation(fadeIn, { params: { time: "1500ms" } })
+  //     ]),
+  //     transition("fade => void", [
+  //       useAnimation(fadeOut, { params: { time: "1500ms" } })
+  //     ]),
+
+  //     /* flip */
+  //     transition("void => flip", [
+  //       useAnimation(flipIn, { params: { time: "500ms" } })
+  //     ]),
+  //     transition("flip => void", [
+  //       useAnimation(flipOut, { params: { time: "500ms" } })
+  //     ]),
+
+  //     /* JackInTheBox */
+  //     transition("void => jackInTheBox", [
+  //       useAnimation(jackIn, { params: { time: "700ms" } })
+  //     ]),
+  //     transition("jackInTheBox => void", [
+  //       useAnimation(jackOut, { params: { time: "700ms" } })
+  //     ])
+  //   ])
+  // ],
+
   animations: [
     trigger("slideAnimation", [
-      /* scale */
+      /* Scale */
       transition("void => scale", [
+        style({ opacity: 0 }), // Start from opacity 0
+        animate("1500ms", style({ opacity: 1 })), // Gradually become visible
         useAnimation(scaleIn, { params: { time: "1500ms" } })
       ]),
       transition("scale => void", [
-        useAnimation(scaleOut, { params: { time: "1500ms" } })
+        useAnimation(scaleOut, { params: { time: "1500ms" } }),
+        animate("500ms", style({ opacity: 0 })) // Gradually fade out
       ]),
-
-      /* fade */
+  
+      /* Fade */
       transition("void => fade", [
+        style({ opacity: 0 }),
+        animate("1500ms", style({ opacity: 1 })),
         useAnimation(fadeIn, { params: { time: "1500ms" } })
       ]),
       transition("fade => void", [
-        useAnimation(fadeOut, { params: { time: "1500ms" } })
+        useAnimation(fadeOut, { params: { time: "1500ms" } }),
+        animate("500ms", style({ opacity: 0 }))
       ]),
-
-      /* flip */
+  
+      /* Flip */
       transition("void => flip", [
+        style({ opacity: 0, transform: "rotateY(-90deg)" }), // Set initial state for flip
+        animate("500ms", style({ opacity: 1, transform: "rotateY(0deg)" })), // Animate to final state
         useAnimation(flipIn, { params: { time: "500ms" } })
       ]),
       transition("flip => void", [
-        useAnimation(flipOut, { params: { time: "500ms" } })
+        useAnimation(flipOut, { params: { time: "500ms" } }),
+        animate("300ms", style({ opacity: 0 }))
       ]),
-
+  
       /* JackInTheBox */
       transition("void => jackInTheBox", [
+        style({ opacity: 0, transform: "scale(0.5) rotate(30deg)" }), // Start with scaled down and rotated
+        animate("700ms", style({ opacity: 1, transform: "scale(1) rotate(0)" })), // Animate to normal size and rotation
         useAnimation(jackIn, { params: { time: "700ms" } })
       ]),
       transition("jackInTheBox => void", [
-        useAnimation(jackOut, { params: { time: "700ms" } })
+        useAnimation(jackOut, { params: { time: "700ms" } }),
+        animate("300ms", style({ opacity: 0 }))
       ])
     ])
   ],
+  
   standalone:true,
   imports:[CommonModule]
 })
 export class CarouselComponent implements OnInit {
   @Input() slideList:any;
   slides: Slide[] = [];
-  @Input() animationType = AnimationType.Flip;
+  @Input() animationType = AnimationType.Scale;
 
   currentSlide = 0;
 

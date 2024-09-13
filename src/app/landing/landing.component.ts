@@ -8,8 +8,10 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { Slide } from "./carousel/carousel.interface";
 import { AnimationType } from "./carousel/carousel.animations";
 import { Subscription } from 'rxjs';
-import { BreakpointObserver, Breakpoints,  } from '@angular/cdk/layout';
+import { BreakpointObserver, BreakpointState, Breakpoints,  } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -24,7 +26,25 @@ import { CommonModule } from '@angular/common';
     SocialMediaComponent,
     BackgroundComponent,
     CarouselComponent,
-    CommonModule
+    CommonModule,
+    RouterModule
+  ],
+  animations:[
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      state('*', style({
+        opacity: 1
+      })),
+      transition(':enter', [  // :enter is alias for void => *
+        style({ opacity: 0 }),
+        animate('500ms ease-in')
+      ]),
+      transition(':leave', [  // :leave is alias for * => void
+        animate('500ms ease-out', style({ opacity: 0 }))
+      ])
+    ])
   ]
 })
 export class LandingComponent implements OnInit {
@@ -45,17 +65,30 @@ export class LandingComponent implements OnInit {
   showMobileMenu: boolean = false;
   constructor(private breakpointObserver: BreakpointObserver) {
 
+    // this.breakpointSubscription = this.breakpointObserver
+    // .observe([Breakpoints.XSmall, Breakpoints.Small])
+    // .subscribe((state) => {
+    //   console.log(state)
+    //   this.isMobile = state.matches;
+    //   if(this.isMobile){
+
+    //   }
+    //   console.log(this.isMobile)
+
+    // });
+
     this.breakpointSubscription = this.breakpointObserver
-    .observe([Breakpoints.Small, Breakpoints.XSmall])
-    .subscribe((state) => {
-      console.log(state)
-      this.isMobile = state.matches;
-      if(this.isMobile){
-
-      }
-      console.log(this.isMobile)
-
-    });
+  .observe(['(max-width: 599px)']) // Custom breakpoint for width 412px or smaller
+  .subscribe((state: BreakpointState) => {
+    console.log(state);
+    this.isMobile = state.matches;
+    if (this.isMobile) {
+      // Add logic for when the screen width is 412px or less
+      console.log('Width is 412px or less');
+    } else {
+      console.log('Width is greater than 412px');
+    }
+  });
 
 
   }
