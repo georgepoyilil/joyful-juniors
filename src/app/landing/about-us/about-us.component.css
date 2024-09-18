@@ -1,0 +1,43 @@
+.about-us-container {
+    padding: 2rem;
+  }
+  
+  .banner {
+    position: relative;
+    text-align: center;
+  }
+  
+  .banner-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .content-section {
+    margin-top: 2rem;
+  }
+  
+  .content-section h2 {
+    color: #4a90e2;
+    font-size: 2rem;
+  }
+  
+  .content-section p, ul {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+  }
+  

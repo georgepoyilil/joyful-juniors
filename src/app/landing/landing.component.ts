@@ -12,6 +12,7 @@ import { BreakpointObserver, BreakpointState, Breakpoints,  } from '@angular/cdk
 import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { RouterModule } from '@angular/router';
+import { AgeGroupsComponent } from './age-groups/age-groups.component';
 
 
 @Component({
@@ -27,7 +28,8 @@ import { RouterModule } from '@angular/router';
     BackgroundComponent,
     CarouselComponent,
     CommonModule,
-    RouterModule
+    RouterModule,
+    AgeGroupsComponent
   ],
   animations:[
     trigger('fadeInOut', [
@@ -60,6 +62,7 @@ export class LandingComponent implements OnInit {
   animationType = AnimationType.Scale;
   @ViewChild(CarouselComponent, { static: true })
   carousel!: CarouselComponent;
+  bgImage: string = "../../assets/background/background.svg";
 
   private breakpointSubscription: Subscription;
   showMobileMenu: boolean = false;

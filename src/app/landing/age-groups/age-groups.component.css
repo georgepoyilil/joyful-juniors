@@ -1,0 +1,23 @@
+p, h2 {
+    font-family: 'Calibri', cursive; /* Playful, bubbly font */
+    font-size: 1.25rem; /* Larger font for emphasis */
+    background: linear-gradient(90deg, #e4565b, #eaa491, #f39d86, #fc8edd, #713dea);
+    -webkit-background-clip: text;
+    color: transparent; /* Make text background gradient visible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+    animation: rainbow 3s ease infinite;
+  }
+  
+  @keyframes rainbow {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+  }
+
+  mat-card{
+    background-color: #9874c326;
+    width: 99%;
+  }
+
+  h2{
+    font-weight: bold
+  }

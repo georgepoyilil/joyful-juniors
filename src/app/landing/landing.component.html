@@ -1,56 +1,67 @@
 <!-- header.component.html -->
-<div class="container-fluid top-bar">
-    <p style="padding-left: 1rem;font-weight: bold;padding-bottom: 1rem;">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z"/></svg>Raslok Hospital Road
-        Thavakkara,Kannur</p>
-</div>
-<div class="container shadower" *ngIf="false">
-    <mat-toolbar>
-        <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo">
-        <span class="spacer"></span>
-        <div class="menu-container">
-            <button class="menu-button" routerLink="/landing">Home</button>
-            <button class="menu-button" routerLink="/about">About Us</button>
-            <button class="menu-button" routerLink="/facilities">Facilities</button>
-            <!-- <button class="menu-button" routerLink="/affiliations">Affliations</button> -->
-            <button class="menu-button" routerLink="/blogs">Blogs</button>
-            <button class="menu-button" routerLink="/gallery">Gallery</button>
-            <button class="menu-button" routerLink="/faqs">FAQs</button>
-            <button class="menu-button" routerLink="/contact">Contact Us</button>
+<div [ngStyle]="{'background-image':'url('+bgImage+')'}" class="background-container-new">
+    <div class="container-fluid top-bar">
+        <p style="padding-left: 1rem;font-weight: bold;padding-bottom: 1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                <path
+                    d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
+            </svg>Raslok Hospital Road
+            Thavakkara,Kannur
+        </p>
+    </div>
+    <div class="container shadower" *ngIf="false">
+        <mat-toolbar>
+            <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo">
+            <span class="spacer"></span>
+            <div class="menu-container">
+                <button class="menu-button" routerLink="/landing">Home</button>
+                <button class="menu-button" routerLink="/about">About Us</button>
+                <button class="menu-button" routerLink="/facilities">Facilities</button>
+                <!-- <button class="menu-button" routerLink="/affiliations">Affliations</button> -->
+                <button class="menu-button" routerLink="/blogs">Blogs</button>
+                <button class="menu-button" routerLink="/gallery">Gallery</button>
+                <button class="menu-button" routerLink="/faqs">FAQs</button>
+                <button class="menu-button" routerLink="/contact">Contact Us</button>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="container-fluid shadower">
+        <div style="text-align: center;">
+            <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo-mobile">
         </div>
-    </mat-toolbar>
-</div>
 
-<div class="container-fluid shadower">
-    <div style="text-align: center;">
-        <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo-mobile">
+        <div (click)="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#e8eaed">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </div>
     </div>
 
-    <div (click)="toggleMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-    </div>
-</div>
+    <div class="menu-class" *ngIf="showMobileMenu" @fadeInOut>
 
-<div class="menu-class" *ngIf="showMobileMenu" @fadeInOut>
-
-    <!-- <mat-toolbar> -->
+        <!-- <mat-toolbar> -->
         <div class="menu-container1">
             <button class="close-button" (click)="toggleMenu()">×</button>
-            <button class="menu-button1" routerLink="/landing">Home</button>
-            <button class="menu-button1" routerLink="./about">About Us</button>
-            <button class="menu-button1" routerLink="./facilities">Facilities</button>
+            <button class="menu-button1" routerLink="/landing" (click)="toggleMenu()">Home</button>
+            <button class="menu-button1" routerLink="./about" (click)="toggleMenu()">About Us</button>
+            <button class="menu-button1" routerLink="./facilities" (click)="toggleMenu()">Facilities</button>
             <!-- <button class="menu-button1" routerLink="/affiliations">Affliations</button> -->
-            <button class="menu-button1" routerLink="./blogs">Blogs</button>
-            <button class="menu-button1" routerLink="./gallery">Gallery</button>
-            <button class="menu-button1" routerLink="./faqs">FAQs</button>
-            <button class="menu-button1" routerLink="./contact">Contact Us</button>
+            <button class="menu-button1" routerLink="./blogs" (click)="toggleMenu()">Blogs</button>
+            <button class="menu-button1" routerLink="./gallery" (click)="toggleMenu()">Gallery</button>
+            <button class="menu-button1" routerLink="./faqs" (click)="toggleMenu()">FAQs</button>
+            <button class="menu-button1" routerLink="./contact" (click)="toggleMenu()">Contact Us</button>
         </div>
-    <!-- </mat-toolbar> -->
-</div>
+        <!-- </mat-toolbar> -->
+    </div>
 
-<!-- <app-social-media></app-social-media> -->
-<!-- <app-background></app-background> -->
-<div style="max-height: 75vh;padding-top: .5rem;">
-    <carousel [slideList]="slides" [animationType]="animationType"></carousel>
+    <!-- <app-social-media></app-social-media> -->
+    <!-- <app-background></app-background> -->
+    <div style="max-height: 75vh;padding-top: .5rem;">
+        <carousel [slideList]="slides" [animationType]="animationType"></carousel>
+    </div>
+    <div class="container-fluid">
+        <app-age-groups></app-age-groups>
+    </div>
 </div>
 <router-outlet></router-outlet>
