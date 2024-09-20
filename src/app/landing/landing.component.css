@@ -124,11 +124,11 @@ app-background {
   color: #007bff; /* Change color on hover */
 }
 
-.background-container-new{
+/* .background-container-new{ */
 
     /* min-height: 100vh; */
-    background-image: url(../../assets/background/background.svg);
+    /* background-image: url(../../assets/background/background-blur.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+} */

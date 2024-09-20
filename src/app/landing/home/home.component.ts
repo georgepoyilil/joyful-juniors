@@ -4,11 +4,14 @@ import { CarouselComponent } from '../carousel/carousel.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AnimationType } from '../carousel/carousel.animations';
 import { Slide } from '../carousel/carousel.interface';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AgeGroupsComponent, CarouselComponent],
+  imports: [AgeGroupsComponent, CarouselComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   animations:[
@@ -77,4 +80,27 @@ export class HomeComponent {
         // text:"lorem ipsum"
     }
   ];
+
+  public screenWidth: any;
+
+  isMobile: boolean = false;
+
+  private breakpointSubscription: Subscription;
+
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+
+    this.breakpointSubscription = this.breakpointObserver
+    .observe([Breakpoints.XSmall, Breakpoints.Small])
+    .subscribe((state) => {
+      console.log(state)
+      this.isMobile = state.matches;
+      if(this.isMobile){
+
+      }
+      console.log(this.isMobile)
+
+    });
+
+  }
 }

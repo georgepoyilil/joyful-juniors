@@ -1,5 +1,6 @@
 <!-- header.component.html -->
-<div [ngStyle]="{'background-image':'url('+bgImage+')'}" class="background-container-new">
+<!-- <div [ngStyle]="{'background-image':'url('+bgImage+')'}" class="background-container-new"> -->
+<div>
     <div class="container-fluid top-bar">
         <p style="padding-left: 1rem;font-weight: bold;padding-bottom: 1rem;">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
@@ -9,36 +10,36 @@
             Thavakkara,Kannur
         </p>
     </div>
-    <div class="container shadower" *ngIf="false">
+    <div class="container shadower" *ngIf="!isMobile">
         <mat-toolbar>
             <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo">
             <span class="spacer"></span>
             <div class="menu-container">
                 <button class="menu-button" routerLink="/landing">Home</button>
-                <button class="menu-button" routerLink="/about">About Us</button>
-                <button class="menu-button" routerLink="/facilities">Facilities</button>
+                <button class="menu-button" routerLink="./about">About Us</button>
+                <button class="menu-button" routerLink="./facilities">Facilities</button>
                 <!-- <button class="menu-button" routerLink="/affiliations">Affliations</button> -->
-                <button class="menu-button" routerLink="/blogs">Blogs</button>
-                <button class="menu-button" routerLink="/gallery">Gallery</button>
-                <button class="menu-button" routerLink="/faqs">FAQs</button>
-                <button class="menu-button" routerLink="/contact">Contact Us</button>
+                <button class="menu-button" routerLink="./blogs">Blogs</button>
+                <button class="menu-button" routerLink="./gallery">Gallery</button>
+                <button class="menu-button" routerLink="./faqs">FAQs</button>
+                <button class="menu-button" routerLink="./contact">Contact Us</button>
             </div>
         </mat-toolbar>
     </div>
 
     <div class="container-fluid shadower">
-        <div style="text-align: center;">
+        <div style="text-align: center;" *ngIf="isMobile">
             <img src="assets/logo-full.png" alt="Joyful Juniors" class="logo-mobile">
         </div>
 
-        <div (click)="toggleMenu()">
+        <div (click)="toggleMenu()" *ngIf="isMobile">
             <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 -960 960 960" width="2rem" fill="#e8eaed">
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
             </svg>
         </div>
     </div>
 
-    <div class="menu-class" *ngIf="showMobileMenu" @fadeInOut>
+    <div class="menu-class" *ngIf="showMobileMenu && isMobile" @fadeInOut>
 
         <!-- <mat-toolbar> -->
         <div class="menu-container1">

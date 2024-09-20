@@ -1,7 +1,10 @@
 <div  style="text-align: center;">
 
     <mat-card>
-        <h2>Age groups</h2>
+
+        <h2 *ngIf="isMobile">Age groups</h2>
+        <h1 *ngIf="!isMobile">Age groups</h1>
+        <div style="height: 4rem;" *ngIf="!isMobile"></div>
         <div class="row" style="text-align: center;">
     
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
@@ -35,6 +38,8 @@
             </div>
         
         </div>
+        <div style="height: 4rem;" *ngIf="!isMobile"></div>
+
     </mat-card>
 </div>
 

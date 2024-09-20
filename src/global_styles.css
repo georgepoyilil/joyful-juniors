@@ -23,7 +23,7 @@ app-root {
 } */
 html, body { height: 100%; margin: 0;}
 body { margin: 0;padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: url('./assets/background/background.svg');
+    background-image: url('./assets/background/background-blur.svg');
   background-size: cover;      /* Ensure the image covers the entire background */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center;  /* Center the image */

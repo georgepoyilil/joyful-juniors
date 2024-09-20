@@ -1,6 +1,14 @@
-<div style="max-height: 75vh;padding-top: .5rem;">
+<div style="max-height: 75vh;padding-top: .5rem;" *ngIf="isMobile">
     <carousel [slideList]="slides" [animationType]="animationType"></carousel>
 </div>
-<div class="container-fluid">
+
+<div class="container" style="height: 90vh;padding-top: .5rem;" *ngIf="!isMobile">
+    <carousel [slideList]="slides" [animationType]="animationType"></carousel>
+</div>
+<br>
+<div class="container">
     <app-age-groups></app-age-groups>
 </div>
+<br>
+
+

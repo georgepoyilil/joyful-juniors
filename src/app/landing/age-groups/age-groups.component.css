@@ -14,8 +14,8 @@ p, h2 {
   }
 
   mat-card{
-    background-color: #9874c326;
-    width: 99%;
+    background-color: #f0e5ff;
+    width: 100%;
   }
 
   h2{
@@ -29,4 +29,14 @@ p, h2 {
     object-fit: cover;
     margin-right: 10px;
     vertical-align: middle;
+  }
+
+  h1 {
+    font-family: 'Calibri', cursive; /* Playful, bubbly font */
+    font-size: 2.5rem; /* Larger font for emphasis */
+    background: linear-gradient(90deg, #822023, #ba6b55, #f39d86, #c56eac, #402286);
+    -webkit-background-clip: text;
+    color: transparent; /* Make text background gradient visible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+    animation: rainbow 3s ease infinite;
   }

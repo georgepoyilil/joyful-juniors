@@ -14,91 +14,45 @@ import {
   jackOut
 } from "./carousel.animations";
 import { CommonModule } from "@angular/common";
+import { Subscription } from "rxjs";
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 
 @Component({
   selector: "carousel",
   templateUrl: "./carousel.component.html",
   styleUrls: ["./carousel.component.scss"],
-  // animations: [
-  //   trigger("slideAnimation", [
-  //     /* scale */
-  //     transition("void => scale", [
-  //       useAnimation(scaleIn, { params: { time: "1500ms" } })
-  //     ]),
-  //     transition("scale => void", [
-  //       useAnimation(scaleOut, { params: { time: "1500ms" } })
-  //     ]),
-
-  //     /* fade */
-  //     transition("void => fade", [
-  //       useAnimation(fadeIn, { params: { time: "1500ms" } })
-  //     ]),
-  //     transition("fade => void", [
-  //       useAnimation(fadeOut, { params: { time: "1500ms" } })
-  //     ]),
-
-  //     /* flip */
-  //     transition("void => flip", [
-  //       useAnimation(flipIn, { params: { time: "500ms" } })
-  //     ]),
-  //     transition("flip => void", [
-  //       useAnimation(flipOut, { params: { time: "500ms" } })
-  //     ]),
-
-  //     /* JackInTheBox */
-  //     transition("void => jackInTheBox", [
-  //       useAnimation(jackIn, { params: { time: "700ms" } })
-  //     ]),
-  //     transition("jackInTheBox => void", [
-  //       useAnimation(jackOut, { params: { time: "700ms" } })
-  //     ])
-  //   ])
-  // ],
-
   animations: [
     trigger("slideAnimation", [
-      /* Scale */
+      /* scale */
       transition("void => scale", [
-        style({ opacity: 0 }), // Start from opacity 0
-        animate("1500ms", style({ opacity: 1 })), // Gradually become visible
         useAnimation(scaleIn, { params: { time: "1500ms" } })
       ]),
       transition("scale => void", [
-        useAnimation(scaleOut, { params: { time: "1500ms" } }),
-        animate("500ms", style({ opacity: 0 })) // Gradually fade out
+        useAnimation(scaleOut, { params: { time: "1500ms" } })
       ]),
-  
-      /* Fade */
+
+      /* fade */
       transition("void => fade", [
-        style({ opacity: 0 }),
-        animate("1500ms", style({ opacity: 1 })),
         useAnimation(fadeIn, { params: { time: "1500ms" } })
       ]),
       transition("fade => void", [
-        useAnimation(fadeOut, { params: { time: "1500ms" } }),
-        animate("500ms", style({ opacity: 0 }))
+        useAnimation(fadeOut, { params: { time: "1500ms" } })
       ]),
-  
-      /* Flip */
+
+      /* flip */
       transition("void => flip", [
-        style({ opacity: 0, transform: "rotateY(-90deg)" }), // Set initial state for flip
-        animate("500ms", style({ opacity: 1, transform: "rotateY(0deg)" })), // Animate to final state
         useAnimation(flipIn, { params: { time: "500ms" } })
       ]),
       transition("flip => void", [
-        useAnimation(flipOut, { params: { time: "500ms" } }),
-        animate("300ms", style({ opacity: 0 }))
+        useAnimation(flipOut, { params: { time: "500ms" } })
       ]),
-  
+
       /* JackInTheBox */
       transition("void => jackInTheBox", [
-        style({ opacity: 0, transform: "scale(0.5) rotate(30deg)" }), // Start with scaled down and rotated
-        animate("700ms", style({ opacity: 1, transform: "scale(1) rotate(0)" })), // Animate to normal size and rotation
         useAnimation(jackIn, { params: { time: "700ms" } })
       ]),
       transition("jackInTheBox => void", [
-        useAnimation(jackOut, { params: { time: "700ms" } }),
-        animate("300ms", style({ opacity: 0 }))
+        useAnimation(jackOut, { params: { time: "700ms" } })
       ])
     ])
   ],
@@ -113,7 +67,29 @@ export class CarouselComponent implements OnInit {
 
   currentSlide = 0;
 
-  constructor() {}
+
+  public screenWidth: any;
+
+  isMobile: boolean = false;
+
+  private breakpointSubscription: Subscription;
+
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+
+    this.breakpointSubscription = this.breakpointObserver
+    .observe([Breakpoints.XSmall, Breakpoints.Small])
+    .subscribe((state) => {
+      console.log(state)
+      this.isMobile = state.matches;
+      if(this.isMobile){
+
+      }
+      console.log(this.isMobile)
+
+    });
+
+  }
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
@@ -141,7 +117,7 @@ export class CarouselComponent implements OnInit {
   startAutoSlide(): void {
     this.intervalId = setInterval(() => {
       this.nextSlide();
-    }, 6000); // Change slide every x seconds
+    }, 4500); // Change slide every x seconds
   }
 
   stopAutoSlide(): void {
@@ -158,4 +134,7 @@ export class CarouselComponent implements OnInit {
       new Image().src = slide.src;
     }
   }
+
+  
+  
 }

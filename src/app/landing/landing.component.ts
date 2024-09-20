@@ -70,30 +70,30 @@ export class LandingComponent implements OnInit {
   showMobileMenu: boolean = false;
   constructor(private breakpointObserver: BreakpointObserver) {
 
-    // this.breakpointSubscription = this.breakpointObserver
-    // .observe([Breakpoints.XSmall, Breakpoints.Small])
-    // .subscribe((state) => {
-    //   console.log(state)
-    //   this.isMobile = state.matches;
-    //   if(this.isMobile){
-
-    //   }
-    //   console.log(this.isMobile)
-
-    // });
-
     this.breakpointSubscription = this.breakpointObserver
-  .observe(['(max-width: 599px)']) // Custom breakpoint for width 412px or smaller
-  .subscribe((state: BreakpointState) => {
-    console.log(state);
-    this.isMobile = state.matches;
-    if (this.isMobile) {
-      // Add logic for when the screen width is 412px or less
-      console.log('Width is 412px or less');
-    } else {
-      console.log('Width is greater than 412px');
-    }
-  });
+    .observe([Breakpoints.XSmall, Breakpoints.Small])
+    .subscribe((state) => {
+      console.log(state)
+      this.isMobile = state.matches;
+      if(this.isMobile){
+
+      }
+      console.log(this.isMobile)
+
+    });
+
+  //   this.breakpointSubscription = this.breakpointObserver
+  // .observe(['(max-width: 599px)']) // Custom breakpoint for width 412px or smaller
+  // .subscribe((state: BreakpointState) => {
+  //   console.log(state);
+  //   this.isMobile = state.matches;
+  //   if (this.isMobile) {
+  //     // Add logic for when the screen width is 412px or less
+  //     console.log('Width is 412px or less');
+  //   } else {
+  //     console.log('Width is greater than 412px');
+  //   }
+  // });
 
 
   }
@@ -161,7 +161,7 @@ export class LandingComponent implements OnInit {
     this.animationType = type.value;
     setTimeout(() => {
       this.carousel.onNextClick();
-    });
+    },500);
   }
 
   toggleMenu(){
