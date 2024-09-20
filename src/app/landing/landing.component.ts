@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { RouterModule } from '@angular/router';
 import { AgeGroupsComponent } from './age-groups/age-groups.component';
+import { HomeComponent } from './home/home.component';
 
 
 @Component({
@@ -29,25 +30,26 @@ import { AgeGroupsComponent } from './age-groups/age-groups.component';
     CarouselComponent,
     CommonModule,
     RouterModule,
-    AgeGroupsComponent
+    AgeGroupsComponent,
+    HomeComponent
   ],
-  animations:[
-    trigger('fadeInOut', [
-      state('void', style({
-        opacity: 0
-      })),
-      state('*', style({
-        opacity: 1
-      })),
-      transition(':enter', [  // :enter is alias for void => *
-        style({ opacity: 0 }),
-        animate('500ms ease-in')
-      ]),
-      transition(':leave', [  // :leave is alias for * => void
-        animate('500ms ease-out', style({ opacity: 0 }))
-      ])
-    ])
-  ]
+  // animations:[
+  //   trigger('fadeInOut', [
+  //     state('void', style({
+  //       opacity: 0
+  //     })),
+  //     state('*', style({
+  //       opacity: 1
+  //     })),
+  //     transition(':enter', [  // :enter is alias for void => *
+  //       style({ opacity: 0 }),
+  //       animate('500ms ease-in')
+  //     ]),
+  //     transition(':leave', [  // :leave is alias for * => void
+  //       animate('500ms ease-out', style({ opacity: 0 }))
+  //     ])
+  //   ])
+  // ]
 })
 export class LandingComponent implements OnInit {
 
