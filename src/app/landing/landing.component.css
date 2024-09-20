@@ -125,11 +125,8 @@ app-background {
 }
 
 .background-container-new{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left; */
-    min-height: 100vh;
+
+    /* min-height: 100vh; */
     background-image: url(../../assets/background/background.svg);
     background-repeat: no-repeat;
     background-position: center;

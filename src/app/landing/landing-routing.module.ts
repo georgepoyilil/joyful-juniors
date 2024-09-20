@@ -11,6 +11,14 @@ const routes: Routes = [
         path: 'about', component:AboutUsComponent
       },
 
+      {
+        path: 'home', component:HomeComponent
+      },
+
+      {
+        path:'', redirectTo:'home', pathMatch:'full'
+      }
+
     ]
   },
 
