@@ -1,0 +1,68 @@
+.facilities-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding-bottom: 2rem;
+  }
+  
+  .facilities-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+    color: var(--primary-color); /* Primary color for text */
+    font-size: 1.5rem;
+    font-family: 'Calibri', cursive, sans-serif; /* Fun font */
+    text-align: left; /* Optional: Align text to the left within the centered list */
+  }
+  
+  .facilities-list li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center; /* Align icons and text vertically */
+    transition: color 0.3s ease;
+  }
+  
+  .facilities-list li i {
+    color: var(--secondary-color); /* Secondary color for icons */
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+  .facilities-list li:hover {
+    color: var(--secondary-color); /* Change text color on hover */
+  }
+  
+  .facilities-list li i:hover {
+    color: var(--primary-color-dark); /* Darker color for icon on hover */
+  }  
+  
+  h2{
+    color: var(--primary-color-dark);
+    text-align: center;
+  }
+
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of images */
+    justify-content: center; /* Center images */
+    gap: 10px; /* Space between images */
+  }
+  
+  .gallery-image {
+    width: calc(50% - 10px); /* Two images per row on large screens */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+    max-width: 100%; /* Prevent overflow */
+    padding-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-image {
+      width: 100%; /* One image per row on small screens */
+    }
+  }
+
+  .kreedo{
+    max-width: 80vw;
+  }
+  
+  
