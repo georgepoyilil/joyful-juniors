@@ -1,0 +1,32 @@
+.contact-us-container {
+    padding: 2rem;
+    background-color: var(--secondary-color-light);
+    color: var(--primary-color-dark);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-us-container h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .contact-info i {
+    color: var(--primary-color);
+    margin-right: 8px;
+  }
+  
+  .contact-info a {
+    color: var(--primary-color-dark);
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }

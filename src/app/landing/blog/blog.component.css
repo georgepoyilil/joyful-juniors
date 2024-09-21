@@ -1,0 +1,38 @@
+.blog-container {
+    padding: 2rem;
+    background-color: var(--secondary-color-light);
+    color: var(--primary-color-dark);
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-container h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .blog-content p strong {
+    color: var(--secondary-color);
+  }
+  
+  @media (max-width: 768px) {
+    .blog-container {
+      padding: 1rem;
+    }
+  
+    .blog-container h1 {
+      font-size: 2rem;
+    }
+  
+    .blog-content p {
+      font-size: 1rem;
+    }
+  }

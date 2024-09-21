@@ -1,0 +1,36 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .gallery-item {
+    margin: 10px;
+    text-align: center;
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    iframe {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .title {
+      margin-top: 5px;
+      font-size: 1rem;
+      color: #8162a7;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
