@@ -33,10 +33,11 @@ p, h2 {
 
   h1 {
     font-family: 'Calibri', cursive; /* Playful, bubbly font */
-    font-size: 2.5rem; /* Larger font for emphasis */
+    font-size: 3rem; /* Larger font for emphasis */
     background: linear-gradient(90deg, #822023, #ba6b55, #f39d86, #c56eac, #402286);
     -webkit-background-clip: text;
     color: transparent; /* Make text background gradient visible */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a light shadow */
     animation: rainbow 3s ease infinite;
+    padding-top: 1rem;
   }

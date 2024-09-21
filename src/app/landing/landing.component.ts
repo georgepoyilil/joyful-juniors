@@ -14,6 +14,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { RouterModule } from '@angular/router';
 import { AgeGroupsComponent } from './age-groups/age-groups.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @Component({
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     RouterModule,
     AgeGroupsComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   // animations:[
   //   trigger('fadeInOut', [
