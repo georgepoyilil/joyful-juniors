@@ -62,7 +62,37 @@ import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 })
 export class CarouselComponent implements OnInit {
   @Input() slideList:any;
-  slides: Slide[] = [];
+  slides: Slide[] = [
+    {
+      headline: "Individual learning with materials",
+      src:'assets/cards/joy1.jpg',
+        // "https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      // text:"lorem ipsum"
+    },
+    {
+      headline: "Small group activities in art, language, and gross motor skills",
+      src: 'assets/cards/joy2.jpg',
+
+        // "https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
+        // text:"lorem ipsum"
+    },
+    {
+      headline: "Learning through a thematic approach",
+      src: 'assets/cards/joy3.jpg',
+        // "https://images.unsplash.com/photo-1557800634-7bf3c7305596?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2001&q=80",
+        // text:"lorem ipsum"
+    },
+    {
+      headline: "Occasional support learning through role-plays, presentations, storytelling,",
+      src: 'assets/cards/joy4.jpg',
+        // "https://images.unsplash.com/photo-1551410224-699683e15636?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80",
+        // text:"lorem ipsum"
+    }
+  ];
+  getFullPath(relativePath: string): string {
+    return `${window.location.origin}/joyful-juniors/${relativePath}`;
+  }
+  
   @Input() animationType = AnimationType.Scale;
 
   currentSlide = 0;
@@ -106,7 +136,7 @@ export class CarouselComponent implements OnInit {
   ngOnInit() {
     this.preloadImages(); // for the demo
     console.log(this.slides);
-    this.slides = this.slideList;
+    // this.slides = this.slideList;
     this.startAutoSlide();
   }
   ngOnDestroy(): void {
