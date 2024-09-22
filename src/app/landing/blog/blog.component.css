@@ -35,4 +35,14 @@
     .blog-content p {
       font-size: 1rem;
     }
+
+    .para-heading{
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+  }
+
+  .para-heading{
+    font-weight: bold;
+    font-size: 2.5rem;
   }

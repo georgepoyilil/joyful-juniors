@@ -132,3 +132,18 @@ app-background {
     background-position: center;
     background-size: cover;
 } */
+
+.menu-icon {
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.icon {
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5)); /* Add shadow */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.icon:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
